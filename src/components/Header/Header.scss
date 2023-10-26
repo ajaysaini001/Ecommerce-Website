@@ -1,0 +1,110 @@
+@import "../../css-config/mixins.scss";
+.main-header{
+    width: 100%;
+    padding: 0 ;
+    background-color: #050000;
+    color: white;
+    border-bottom: 1px solid rgba(0 0  0.1);
+    z-index: 99;
+    @include md{
+        padding: 0 40px;
+        
+    }
+    
+    .header-content{
+        display: flex;
+
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+        // width: 100%;
+        margin: 0 auto;
+        background-color: #050000;
+        @include md{
+            height:80px;
+            width: 1000px;
+            position: relative;
+            right: 7%;
+        }
+        .left{ 
+            list-style-type: none;
+            display: none;
+            gap: 25px;
+            @include md{
+                display: flex;
+               
+               
+
+            }
+            li{
+                font-size: 14px;
+                font-weight: 800px;
+                text-transform: uppercase;
+                cursor: pointer;
+            };
+
+        }
+        .center{ 
+            font-size:22px;
+            font-weight: 700;
+            cursor: pointer;
+            @include md{
+                font-size: 20px;
+                position: absolute;
+                left: 58%;
+                transform: translate(-50%);
+            }
+        }
+        .right{
+            display: flex;
+            align-items: center;
+            gap:20px;
+            @include md{
+                gap: 25px;
+            }
+            svg{
+                font-size: 20px;
+                cursor: pointer;
+                @include md{
+                    gap: 24px;
+                }
+            }
+            .cart-icons{
+                position: relative;
+                background-color: transparent;
+                top: 2%;
+                right: 20%;
+                @include md{
+
+                }
+            }
+            span{
+                min-width:15px;
+                text-align:center;
+                background-color: #Be2de2;
+                padding: 2.5px;
+                position: absolute;
+                top: -5px;
+                right: -12px;
+                font-size: 12px;
+                line-height: 1;
+                border-radius: 20px;
+                
+            }
+
+        }
+        
+        }
+        &.sticky-header{
+            position:sticky;
+            top:0;
+            animation: stickyHeader 0.5s ease forwards;
+    }       
+}
+@keyframes stickyHeader {
+    0%{
+        transform: translateY(-80px);
+        transform: translate(0);
+    }
+    
+}
